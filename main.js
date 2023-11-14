@@ -1,11 +1,13 @@
-import './style.css'
-import * as THREE from 'three';
+import { createCube } from './src/geometry';
+import createThreeOptions from './src/init';
+import render from './src/render';
+import './style.css';
 
-// threejs 三个要素 场景 相机 渲染器
-const scene = new THREE.Scene();
-const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000)
-const renderer = new THREE.WebGLRenderer();
-renderer.setSize(window.innerWidth, window.innerHeight);
-document.body.appendChild(renderer.domElement);
-// 渲染器中加入场景和相机
-renderer.render(scene, camera)
+// 创建 threejs 基础配置
+const { scene, camera, renderer } = createThreeOptions();
+// 创建正方体
+const cube = createCube();
+// 将正方体加入到场景
+scene.add(cube);
+// 实时渲染（函数会不停执行）
+render({ scene, camera, renderer });
