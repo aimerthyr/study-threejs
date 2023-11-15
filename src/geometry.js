@@ -1,5 +1,3 @@
-import * as THREE from 'three';
-
 /** 创建一个立方体 */
 export function createCube() {
   // 创建一个立方几何体

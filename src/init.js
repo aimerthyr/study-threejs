@@ -1,4 +1,3 @@
-import * as THREE from 'three';
 /** 初始化 threejs 配置 */
 export default function createThreeOptions() {
   // threejs 三个要素 场景 相机 渲染器

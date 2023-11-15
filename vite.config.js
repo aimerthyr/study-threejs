@@ -1,4 +1,5 @@
 import path from 'path';
+import AutoImport from 'unplugin-auto-import/vite';
 import eslintPlugin from 'vite-plugin-eslint';
 /** @type {import('vite').UserConfig} */
 export default {
@@ -14,6 +15,9 @@ export default {
     eslintPlugin({
       lintOnStart: true,
       cache: false,
+    }),
+    AutoImport({
+      imports: [{ three: [['*', 'THREE']] }],
     }),
   ],
   server: {
