@@ -3,7 +3,14 @@ module.exports = {
     browser: true,
     es2021: true,
   },
-  extends: ['eslint:recommended', 'plugin:prettier/recommended'],
+  parser: '@typescript-eslint/parser',
+  plugins: ['@typescript-eslint'],
+  extends: [
+    './.eslintrc-auto-import.json',
+    'eslint:recommended',
+    'plugin:prettier/recommended',
+    'plugin:@typescript-eslint/recommended',
+  ],
   overrides: [
     {
       env: {
