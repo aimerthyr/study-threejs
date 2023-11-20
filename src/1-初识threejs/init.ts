@@ -6,7 +6,7 @@ export default function createThreeOptions() {
   // 默认相机坐标是 0,0,0 并且朝向 y 轴负方向
   camera.position.z = 10;
   // 创建渲染器
-  const renderer = new THREE.WebGLRenderer();
+  const renderer = new THREE.WebGLRenderer({ antialias: true });
   // 设置渲染器尺寸
   renderer.setSize(window.innerWidth, window.innerHeight);
   // 挂载到 dom 元素上

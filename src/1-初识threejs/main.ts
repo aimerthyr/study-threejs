@@ -1,4 +1,4 @@
-import '../style.css';
+import '../../style.css';
 import { createCube } from './geometry';
 import createGUI from './gui';
 import createThreeOptions from './init';
@@ -17,13 +17,9 @@ const axesHelper = new THREE.AxesHelper(5);
 scene.add(axesHelper);
 // 将正方体加入到场景
 scene.add(cube);
-
-cube.scale.y = 2;
-// cube.rotation.x = Math.PI / 4;
-
 // 实时渲染（函数会不停执行）
 render({ scene, camera, renderer, controls });
-
+// 窗口自适应
 resize(renderer, camera);
-
+// 创建 GUI 辅助工具
 createGUI(cube, controls);

@@ -3,7 +3,7 @@ import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 export default function createOrbitControls(camera: THREE.PerspectiveCamera, renderer: THREE.WebGLRenderer) {
   const controls = new OrbitControls(camera, renderer.domElement);
   // 1. 阻尼效果
-  // controls.enableDamping = true;
+  controls.enableDamping = true;
   // // 2. 开启自动旋转轨道控制器效果->带动摄像机一起旋转（摄像机顺时针水平旋转）
   // controls.autoRotate = true;
   // // 3. 垂直角度范围控制（0 上面，Math.PI 下面）
