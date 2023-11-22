@@ -1,12 +1,13 @@
-import * as dat from 'dat.gui';
-import { BoxGeometry, MeshBasicMaterial, Object3DEventMap } from 'three';
+import { GUI } from 'three/addons/libs/lil-gui.module.min.js';
+
+import { BoxGeometry, Color, Mesh, MeshBasicMaterial, Object3DEventMap } from 'three';
 import { OrbitControls } from 'three/examples/jsm/Addons.js';
 export default function createGUI(
-  cube: THREE.Mesh<BoxGeometry, MeshBasicMaterial, Object3DEventMap>,
+  cube: Mesh<BoxGeometry, MeshBasicMaterial, Object3DEventMap>,
   controls: OrbitControls,
 ) {
   // 2. 创建 GUI 对象
-  const gui = new dat.GUI();
+  const gui = new GUI();
   // 3. 添加具体控制器使用
   // gui.add() 添加图形用户界面工具
   // 参数1：关联 DOM 对象，JS 对象，3D 物体对象
@@ -23,7 +24,7 @@ export default function createGUI(
     color: `#${cube.material.color.getHexString()}`,
   };
   gui.addColor(colorObj, 'color').onChange(val => {
-    cube.material.color = new THREE.Color(val);
+    cube.material.color = new Color(val);
   });
   // 3.4 创建分组-立方体位置
   const folder = gui.addFolder('立方体位置');

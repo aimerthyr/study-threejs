@@ -4,6 +4,7 @@ import createOrbitControls from '@core/orbitControl';
 import render from '@core/render';
 import resize from '@core/resize';
 import createStats from '@core/stats';
+import { AxesHelper } from 'three';
 
 /** 创建 threejs 基础配置练习场 */
 export default function createPlayground() {
@@ -11,7 +12,7 @@ export default function createPlayground() {
   const { scene, camera, renderer } = createThreeOptions();
 
   // 创建辅助坐标系
-  const axesHelper = new THREE.AxesHelper(5);
+  const axesHelper = new AxesHelper(5);
   scene.add(axesHelper);
 
   //#region 实时渲染相关

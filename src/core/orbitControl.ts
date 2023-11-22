@@ -1,6 +1,6 @@
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 /** 创建一个轨道控制器 */
-export default function createOrbitControls(camera: THREE.PerspectiveCamera, renderer: THREE.WebGLRenderer) {
+export default function createOrbitControls(camera: PerspectiveCamera, renderer: WebGLRenderer) {
   const controls = new OrbitControls(camera, renderer.domElement);
   // 1. 阻尼效果
   controls.enableDamping = true;

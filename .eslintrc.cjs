@@ -5,12 +5,7 @@ module.exports = {
   },
   parser: '@typescript-eslint/parser',
   plugins: ['@typescript-eslint'],
-  extends: [
-    './.eslintrc-auto-import.json',
-    'eslint:recommended',
-    'plugin:prettier/recommended',
-    'plugin:@typescript-eslint/recommended',
-  ],
+  extends: ['eslint:recommended', 'plugin:prettier/recommended', 'plugin:@typescript-eslint/recommended'],
   overrides: [
     {
       env: {
@@ -27,8 +22,6 @@ module.exports = {
     sourceType: 'module',
   },
   rules: {
-    'no-restricted-globals': 'off',
-    'no-undef': 'off',
     '@typescript-eslint/ban-ts-comment': 'off',
   },
 };

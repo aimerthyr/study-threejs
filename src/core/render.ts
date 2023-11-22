@@ -1,10 +1,11 @@
+import { PerspectiveCamera, Scene, WebGLRenderer } from 'three';
 import { OrbitControls } from 'three/examples/jsm/Addons.js';
 
 /** 渲染函数（内部会通过 requestAnimationFrame 不停更新场景和相机实时渲染） */
 export default function render(renderOption: {
-  scene: THREE.Scene;
-  camera: THREE.PerspectiveCamera;
-  renderer: THREE.WebGLRenderer;
+  scene: Scene;
+  camera: PerspectiveCamera;
+  renderer: WebGLRenderer;
   controls: OrbitControls;
   stats: Stats;
 }) {

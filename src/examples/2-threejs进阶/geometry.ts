@@ -1,11 +1,13 @@
+import { BoxGeometry, CircleGeometry, DoubleSide, Mesh, MeshBasicMaterial, PlaneGeometry } from 'three';
+
 /** 创建不同颜色面的立方体 */
 export function createColorfulCube() {
-  const geometry = new THREE.BoxGeometry(1, 1, 1);
+  const geometry = new BoxGeometry(1, 1, 1);
   // 顺序是 x 正负，y 正负，z 正负
   const materials = ['red', 'blue', 'yellow', 'orange', 'gray', 'purple'].map(color => {
-    return new THREE.MeshBasicMaterial({ color });
+    return new MeshBasicMaterial({ color });
   });
-  return new THREE.Mesh(geometry, materials);
+  return new Mesh(geometry, materials);
 }
 
 function getRandomColor() {
@@ -35,13 +37,27 @@ export function createMultipleCubes(num: number) {
     .fill(null)
     .map(() => {
       // 大小是 3 的随机数
-      const geometry = new THREE.BoxGeometry(getRandomNumber(3), getRandomNumber(3), getRandomNumber(3));
+      const geometry = new BoxGeometry(getRandomNumber(3), getRandomNumber(3), getRandomNumber(3));
       // 颜色随机
-      const material = new THREE.MeshBasicMaterial({ color: getRandomColor() });
-      const cube = new THREE.Mesh(geometry, material);
+      const material = new MeshBasicMaterial({ color: getRandomColor() });
+      const cube = new Mesh(geometry, material);
       cube.name = 'cube';
       // 位置是 -5 到 5 的随机数
       cube.position.set(getRandomNumber([-5, 5]), getRandomNumber([-5, 5]), getRandomNumber([-5, 5]));
       return cube;
     });
+}
+
+/** 创建圆形平面 */
+export function createCircle() {
+  const circle = new CircleGeometry(5);
+  const material = new MeshBasicMaterial({ color: 'red', side: DoubleSide });
+  return new Mesh(circle, material);
+}
+
+/** 创建平面 */
+export function createPlane() {
+  const plane = new PlaneGeometry(1, 1);
+  const material = new MeshBasicMaterial({ color: 'red', side: DoubleSide });
+  return new Mesh(plane, material);
 }
