@@ -28,8 +28,8 @@ function getRandomNumber(area: number[] | number): number {
 }
 
 /** 创建多个立方体 */
-export function createMultipleCubes() {
-  return Array(6)
+export function createMultipleCubes(num: number) {
+  return Array(num)
     .fill(null)
     .map(() => {
       // 大小是 3 的随机数

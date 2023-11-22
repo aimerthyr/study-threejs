@@ -8,7 +8,7 @@ const { scene } = createPlayground();
 // scene.add(colorfulCube);
 
 // 2. 创建多个立方体
-const cubeList = createMultipleCubes();
+const cubeList = createMultipleCubes(6);
 cubeList.forEach(cube => {
   scene.add(cube);
 });
