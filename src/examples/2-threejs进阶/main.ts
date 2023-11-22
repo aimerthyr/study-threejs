@@ -1,5 +1,5 @@
 import createPlayground from '@core/index';
-import { createSphere } from './geometry';
+import { createLine } from './object';
 
 const { scene } = createPlayground();
 
@@ -22,5 +22,14 @@ const { scene } = createPlayground();
 // const plane = createPlane();
 // scene.add(plane);
 // 5. 创建球体
-const sphere = createSphere();
-scene.add(sphere);
+// const sphere = createSphere();
+// scene.add(sphere);
+// 6. 创建点状球体
+// const pointSphere = createPointSphere();
+// scene.add(pointSphere);
+// 7. 创建线状球体
+// const lineSphere = createLineSphere();
+// scene.add(lineSphere);
+// 8. 创建一条线
+const line = createLine();
+scene.add(line);
