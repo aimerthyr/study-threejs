@@ -1,4 +1,4 @@
-import { BoxGeometry, CircleGeometry, DoubleSide, Mesh, MeshBasicMaterial, PlaneGeometry } from 'three';
+import { BoxGeometry, CircleGeometry, DoubleSide, Mesh, MeshBasicMaterial, PlaneGeometry, SphereGeometry } from 'three';
 
 /** 创建不同颜色面的立方体 */
 export function createColorfulCube() {
@@ -60,4 +60,11 @@ export function createPlane() {
   const plane = new PlaneGeometry(1, 1);
   const material = new MeshBasicMaterial({ color: 'red', side: DoubleSide });
   return new Mesh(plane, material);
+}
+
+/** 创建球体 */
+export function createSphere() {
+  const sphere = new SphereGeometry(1);
+  const material = new MeshBasicMaterial({ color: 'red' });
+  return new Mesh(sphere, material);
 }

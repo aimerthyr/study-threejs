@@ -1,7 +1,6 @@
-import { GUI } from 'three/addons/libs/lil-gui.module.min.js';
-
 import { BoxGeometry, Color, Mesh, MeshBasicMaterial, Object3DEventMap } from 'three';
 import { OrbitControls } from 'three/examples/jsm/Addons.js';
+import GUI from 'three/examples/jsm/libs/lil-gui.module.min.js';
 export default function createGUI(
   cube: Mesh<BoxGeometry, MeshBasicMaterial, Object3DEventMap>,
   controls: OrbitControls,

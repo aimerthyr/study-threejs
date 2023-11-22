@@ -25,6 +25,5 @@
       "@core/*": ["src/core/*"]
     }
   },
-  "include": ["src"],
-  "files": ["./auto-imports.d.ts"]
+  "include": ["src"]
 }
