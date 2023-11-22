@@ -29,5 +29,6 @@ module.exports = {
   rules: {
     'no-restricted-globals': 'off',
     'no-undef': 'off',
+    '@typescript-eslint/ban-ts-comment': 'off',
   },
 };

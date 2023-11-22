@@ -1,4 +1,5 @@
 import createPlayground from '@core/index';
+import { initEvents } from './event';
 import { createMultipleCubes } from './geometry';
 
 const { scene } = createPlayground();
@@ -12,3 +13,5 @@ const cubeList = createMultipleCubes(6);
 cubeList.forEach(cube => {
   scene.add(cube);
 });
+
+initEvents(scene);

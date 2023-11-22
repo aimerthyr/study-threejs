@@ -10,12 +10,14 @@ export function createColorfulCube() {
 
 function getRandomColor() {
   // 生成随机的RGB颜色值
-  const r = Math.floor(Math.random() * 256);
-  const g = Math.floor(Math.random() * 256);
-  const b = Math.floor(Math.random() * 256);
-
+  const getRandomComponent = () => Math.floor(Math.random() * 256);
+  // 小于 16 转成 16 进制是一个字符，所以需要在前面补一个 0
+  const toHex = (num: number) => (num < 16 ? '0' : '') + num.toString(16);
+  const r = getRandomComponent();
+  const g = getRandomComponent();
+  const b = getRandomComponent();
   // 将RGB值转换为十六进制格式
-  const hexColor = `#${r.toString(16)}${g.toString(16)}${b.toString(16)}`;
+  const hexColor = `#${toHex(r)}${toHex(g)}${toHex(b)}`;
   return hexColor;
 }
 
@@ -37,6 +39,7 @@ export function createMultipleCubes(num: number) {
       // 颜色随机
       const material = new THREE.MeshBasicMaterial({ color: getRandomColor() });
       const cube = new THREE.Mesh(geometry, material);
+      cube.name = 'cube';
       // 位置是 -5 到 5 的随机数
       cube.position.set(getRandomNumber([-5, 5]), getRandomNumber([-5, 5]), getRandomNumber([-5, 5]));
       return cube;
