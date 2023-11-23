@@ -55,6 +55,11 @@ export function createDOM() {
   const element = document.createElement('div');
   element.innerText = '我是 div';
   element.style.color = '#fff';
+  element.style.pointerEvents = 'all';
+  // 普通 dom 元素依然采用事件监听，不能用光线投射技术
+  element.addEventListener('click', () => {
+    console.log('我被点击了');
+  });
 
   // 将 DOM 元素 转成 3D 物体
   const elementObj = new CSS3DObject(element);

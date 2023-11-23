@@ -1,5 +1,5 @@
 import createPlayground from '@core/index';
-import { createLine } from './object';
+import { createLine } from './model';
 
 const { scene } = createPlayground();
 

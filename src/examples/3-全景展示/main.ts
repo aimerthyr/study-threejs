@@ -1,5 +1,7 @@
+import { createMultipleCubes } from '@common/geometry';
 import createPlayground from '@core/index';
-import { createDOM } from './object';
+import initEvents from './event';
+import { createDOM } from './model';
 
 const { scene, camera, controls, renderer } = createPlayground();
 
@@ -27,5 +29,9 @@ function renderLoop() {
   css3Renderer.render(scene, camera);
   requestAnimationFrame(renderLoop);
 }
-
 renderLoop();
+const cubeList = createMultipleCubes(6);
+cubeList.forEach(cube => {
+  scene.add(cube);
+});
+initEvents(scene, camera);

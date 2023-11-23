@@ -5,6 +5,7 @@ export default defineConfig({
     alias: {
       '@': path.resolve(__dirname, './'),
       '@core': path.resolve(__dirname, './src/core'),
+      '@common': path.resolve(__dirname, './src/common'),
     },
   },
   plugins: [],
