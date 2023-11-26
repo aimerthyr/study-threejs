@@ -1,7 +1,7 @@
 import { createMultipleCubes } from '@common/geometry';
-import createPlayground from '@core/index';
 import initEvents from './event';
 import { createDOM } from './model';
+import createPlayground from '@core/index';
 
 const { scene, camera, controls, renderer } = createPlayground();
 

@@ -1,12 +1,13 @@
 {
   "name": "study-threejs",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
   "type": "module",
+  "workspaces": [
+    "packages/*"
+  ],
   "scripts": {
-    "dev": "vite",
-    "build": "tsc && vite build",
-    "preview": "vite preview"
+    "dev:grammar": "yarn workspace @study/grammar start"
   },
   "devDependencies": {
     "@types/three": "^0.158.2",

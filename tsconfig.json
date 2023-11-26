@@ -18,13 +18,5 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
-
-    "baseUrl": "./",
-    "paths": {
-      "@": ["./"],
-      "@core/*": ["src/core/*"],
-      "@common/*": ["src/common/*"]
-    }
   },
-  "include": ["src"]
 }
