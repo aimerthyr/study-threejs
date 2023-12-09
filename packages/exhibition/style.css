@@ -1,1 +1,12 @@
-@import '../../global.css'
+@import '../../global.css';
+
+* {
+  cursor: pointer;
+}
+
+.dom-mark-style {
+  padding: 5px;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  cursor: pointer;
+}
