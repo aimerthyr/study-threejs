@@ -29,7 +29,7 @@ function switchScene(sceneName: string, cube: Mesh<BoxGeometry, MeshBasicMateria
   clearMarks(group);
   const config = SCENE_CONFIG.get(sceneName)!;
   const materialList = config.imageUrlList.map(v => {
-    const texture = new TextureLoader().load(`../technology/${config.index}/${v}`);
+    const texture = new TextureLoader().load(new URL(`./assets/technology/${config.index}/${v}`, import.meta.url).href);
     // 设置颜色通道，防止颜色过浅
     texture.colorSpace = SRGBColorSpace;
     const material = new MeshBasicMaterial({ map: texture, side: DoubleSide });
@@ -41,7 +41,7 @@ function switchScene(sceneName: string, cube: Mesh<BoxGeometry, MeshBasicMateria
   config.markList.forEach(v => {
     let mark = null;
     if (v.name === 'landMark') {
-      mark = createMark(`../other/landmark.png`);
+      mark = createMark();
     } else if (v.name === 'dom') {
       const clickEvent = () => {
         switchScene(v.targetAttr, cube);

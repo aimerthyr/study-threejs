@@ -23,8 +23,8 @@ export function createCube() {
   return new Mesh(geometry, [material]);
 }
 
-export function createMark(image: string) {
-  const texture = new TextureLoader().load(image);
+export function createMark() {
+  const texture = new TextureLoader().load(new URL(`./assets/other/landmark.png`, import.meta.url).href);
   const geometry = new PlaneGeometry(0.05, 0.05);
   const material = new MeshBasicMaterial({ map: texture, side: DoubleSide, transparent: true });
   return new Mesh(geometry, material);
